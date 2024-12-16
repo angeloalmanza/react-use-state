@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 function App() {
 
-  const [ActiveLanguage, setActiveLanguage] = useState(1);
+  const [ActiveLanguage, setActiveLanguage] = useState(null);
 
   const ActiveLanguageData = languages.find((curLanguage) => curLanguage.id === ActiveLanguage);
 
@@ -16,8 +16,12 @@ function App() {
         ))}
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">{ActiveLanguageData.title}</h5>
-            <p className="card-text">{ActiveLanguageData.description}</p>
+          {ActiveLanguageData ? (
+              <h5 className="card-title">{ActiveLanguageData.title}</h5>
+              <p className="card-text">{ActiveLanguageData.description}</p>
+            ) : (
+              <p>Nessun linguaggio selezionato</p>
+            )}
           </div>
         </div>
       </div>
