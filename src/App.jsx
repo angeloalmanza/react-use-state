@@ -1,6 +1,7 @@
 import languages from './data/data'
 import { useState } from 'react'
 import CardLanguage from './components/Card';
+import LanguageButton from './components/Buttons';
 
 function App() {
 
@@ -13,7 +14,12 @@ function App() {
       <h1 className='mb-5'>Learn Web development</h1>
       <div className="container">
         {languages.map((curLanguage) => (
-          <button onClick={() => {setActiveLanguage(curLanguage.id)}} key={curLanguage.id} className={`btn me-2 mb-2 text-white ${ActiveLanguage === curLanguage.id ? curLanguage.title.replace('.', '') : 'btn-primary'}`}>{curLanguage.title}</button>
+          <LanguageButton
+          key={curLanguage.id}
+          language={curLanguage}
+          isActive={ActiveLanguage === curLanguage.id}
+          onClick={setActiveLanguage} 
+          />
         ))}
         <CardLanguage languageData={ActiveLanguageData}/>
       </div>
