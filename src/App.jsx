@@ -12,7 +12,7 @@ function App() {
       <h1>Learn Web development</h1>
       <div className="container">
         {languages.map((curLanguage) => (
-          <button onClick={() => {setActiveLanguage(curLanguage.id)}} key={curLanguage.id} className='btn btn-primary me-2 mb-2'>{curLanguage.title}</button>
+          <button onClick={() => {setActiveLanguage(curLanguage.id)}} key={curLanguage.id} className={`btn me-2 mb-2 text-white ${ActiveLanguage === curLanguage.id ? curLanguage.title.replace('.', '') : 'btn-primary'}`}>{curLanguage.title}</button>
         ))}
         <div className="card">
           <div className="card-body">
