@@ -17,8 +17,10 @@ function App() {
         <div className="card">
           <div className="card-body">
           {ActiveLanguageData ? (
-              <h5 className="card-title">{ActiveLanguageData.title}</h5>
-              <p className="card-text">{ActiveLanguageData.description}</p>
+              <>
+                <h5 className="card-title">{ActiveLanguageData.title}</h5>
+                <p className="card-text">{ActiveLanguageData.description}</p>
+              </>
             ) : (
               <p>Nessun linguaggio selezionato</p>
             )}
